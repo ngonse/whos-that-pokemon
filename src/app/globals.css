@@ -3,25 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.black-image {
+  filter: brightness(0);
+}
+
+.button {
+  @apply focus:ring-4 focus:outline-none font-bold text-xl uppercase px-5 py-7 text-center rounded-md  hover:opacity-80 tracking-wider bg-hows-that-pokemon bg-right-center;
+  color: #ffcb05;
+  text-shadow: 3px 0 #3a5ea9, -3px 0 #3a5ea9, 0 3px #3a5ea9, 0 -3px #3a5ea9, 2px 2px #3a5ea9, -2px -2px #3a5ea9,
+    2px -2px #3a5ea9, -2px 2px #3a5ea9;
+}
+
+.button:nth-child(3) {
+  @apply rounded-bl-xl;
+}
+
+.button:nth-child(4) {
+  @apply rounded-br-xl;
 }
