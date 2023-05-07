@@ -1,6 +1,9 @@
 'use client';
 
 import { Pokemon } from 'pokenode-ts';
+import confeti from 'canvas-confetti';
+import { useEffect, useRef, useState } from 'react';
+import { PokemonImage } from './PokemonImage';
 
 type Props = {
   pokemon: Pokemon[];
@@ -8,22 +11,47 @@ type Props = {
 };
 
 export const PokemonList: React.FC<Props> = ({ pokemon, guess }) => {
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const [hasGuess, setGuess] = useState(false);
+  const [wrongGuess, setWrongGuess] = useState<number[]>([]);
+
   const checkPokemon = (id: number) => {
+    if (hasGuess) return;
+
     if (id === guess.id) {
-      console.log('You got it right!');
-      window.location.reload();
+      confeti();
+      setGuess(true);
+      timerRef.current = setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } else {
-      console.log('You got it wrong!');
+      setWrongGuess((prev) => (prev.includes(id) ? prev : [...prev, id]));
     }
   };
 
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative grid grid-cols-2 grid-rows-2 gap-3 mt-3 w-[800px]">
-      {pokemon.map(({ id, name }) => (
-        <button key={id} className="button" onClick={() => checkPokemon(id)}>
-          {name}
-        </button>
-      ))}
-    </section>
+    <>
+      <PokemonImage pokemon={guess} hasGuess={hasGuess} />
+
+      <section className="relative grid grid-cols-2 grid-rows-2 gap-3 mt-3 w-[800px]">
+        {pokemon.map(({ id, name }) => (
+          <button
+            key={id}
+            className={`button ${wrongGuess.includes(id) && 'opacity-50'}`}
+            onClick={() => checkPokemon(id)}
+          >
+            {name}
+          </button>
+        ))}
+      </section>
+    </>
   );
 };

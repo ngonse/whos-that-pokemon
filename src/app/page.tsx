@@ -20,8 +20,6 @@ export default async function Home() {
 
   return (
     <main className={`${pressStart.className} bg-stone-900 min-h-screen flex flex-col p-14 justify-start items-center`}>
-      <PokemonImage pokemon={guessPokemon} />
-
       <PokemonList pokemon={pokemonList} guess={guessPokemon} />
     </main>
   );

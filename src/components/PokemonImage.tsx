@@ -3,14 +3,17 @@ import { Pokemon } from 'pokenode-ts';
 
 type Props = {
   pokemon: Pokemon;
+  hasGuess: boolean;
 };
 
-export const PokemonImage: React.FC<Props> = ({ pokemon }) => {
+export const PokemonImage: React.FC<Props> = ({ pokemon: { id }, hasGuess }) => {
   return (
     <section className="relative aspect-video w-[800px]">
       <Image
-        className="black-image absolute top-16 left-20 z-10"
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
+        className={`${
+          hasGuess ? 'brightness-100' : 'brightness-0'
+        } transition-all duration-75 absolute top-16 left-20 z-10`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
         alt="Next.js Logo"
         width={300}
         height={300}
