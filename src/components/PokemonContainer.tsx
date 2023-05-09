@@ -17,6 +17,7 @@ export const PokemonContainer: React.FC<Props> = ({ pokemon, guess }) => {
   const [guessPokemon, setGuessPokemon] = useState<Pokemon>(guess);
 
   const [hasGuess, setGuess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const loadPokemon = async () => {
     const pokemonList = await getPokemon();
@@ -26,17 +27,21 @@ export const PokemonContainer: React.FC<Props> = ({ pokemon, guess }) => {
 
     setPokemonList(pokemonList);
     setGuessPokemon(guessPokemon);
+
+    setLoading(false);
   };
 
   return (
     <>
-      <PokemonImage pokemon={guessPokemon} hasGuess={hasGuess} />
+      <PokemonImage pokemon={guessPokemon} hasGuess={hasGuess} loading={loading} />
       <Options
         pokemonList={pokemonList}
         guess={guessPokemon}
         hasGuess={hasGuess}
         setGuess={setGuess}
         loadPokemon={loadPokemon}
+        loading={loading}
+        setLoading={setLoading}
       />
     </>
   );

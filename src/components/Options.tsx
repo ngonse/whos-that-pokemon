@@ -11,9 +11,19 @@ type Props = {
   hasGuess: boolean;
   setGuess: (hasGuess: boolean) => void;
   loadPokemon: () => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
 };
 
-export const Options: React.FC<Props> = ({ pokemonList, guess, hasGuess, setGuess, loadPokemon }) => {
+export const Options: React.FC<Props> = ({
+  pokemonList,
+  guess,
+  hasGuess,
+  setGuess,
+  loadPokemon,
+  loading,
+  setLoading,
+}) => {
   const [wrongGuess, setWrongGuess] = useState<number[]>([]);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -25,6 +35,7 @@ export const Options: React.FC<Props> = ({ pokemonList, guess, hasGuess, setGues
       confetti();
       setGuess(true);
       timerRef.current = setTimeout(() => {
+        setLoading(true);
         loadPokemon();
       }, 1000);
     } else {
@@ -49,7 +60,15 @@ export const Options: React.FC<Props> = ({ pokemonList, guess, hasGuess, setGues
           className={`button ${wrongGuess.includes(id) && 'opacity-50'}`}
           onClick={() => checkPokemon(id)}
         >
-          {name}
+          {!loading ? (
+            name
+          ) : (
+            <>
+              <span className="animate-[bounce_1s_ease-in-out_100ms_infinite]">.</span>
+              <span className="animate-[bounce_1s_ease-in-out_200ms_infinite]">.</span>
+              <span className="animate-[bounce_1s_ease-in-out_300ms_infinite]">.</span>
+            </>
+          )}
         </button>
       ))}
     </section>
