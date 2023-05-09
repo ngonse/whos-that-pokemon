@@ -32,7 +32,8 @@ export const PokemonContainer: React.FC<Props> = ({ pokemon, guess }) => {
   };
 
   return (
-    <div className="lg:flex lg:justify-center lg:items-center lg:flex-col lg:min-w-full">
+    <div className="lg:flex lg:justify-center lg:items-center lg:flex-col lg:min-w-full text-center">
+      <h1 className="pokemon-font mt-6 mb-3 text-3xl">Who&apos;s that Pokémon?</h1>
       <PokemonImage pokemon={guessPokemon} hasGuess={hasGuess} loading={loading} />
       <Options
         pokemonList={pokemonList}
