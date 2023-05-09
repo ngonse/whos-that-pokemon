@@ -29,7 +29,7 @@ export const PokemonImage: React.FC<Props> = ({ pokemon: { id }, hasGuess, loadi
         height={320}
       />
 
-      <div className="bg-hows-that-pokemon-mb sm:bg-hows-that-pokemon absolute top-0 bottom-0 left-0 right-0 bg-cover  bg-no-repeat z-0 w-[350px] h-[350px] m-auto rounded-lg sm:rounded-md sm:rounded-tl-xl sm:rounded-tr-xl sm:w-[620px] sm:bg-contain sm:h-auto sm:aspect-video md:w-[740px] lg:w-[860px]" />
+      <div className="bg-whos-that-pokemon-mb sm:bg-whos-that-pokemon absolute top-0 bottom-0 left-0 right-0 bg-cover  bg-no-repeat z-0 w-[350px] h-[350px] m-auto rounded-lg sm:rounded-md sm:rounded-tl-xl sm:rounded-tr-xl sm:w-[620px] sm:bg-contain sm:h-auto sm:aspect-video md:w-[740px] lg:w-[860px]" />
     </section>
   );
 };

@@ -10,7 +10,7 @@ export default function Loading() {
       <section className="relative aspect-video w-[800px]">
         <div className="bg-gray-700 h-300 w-300 rounded-md animate-pulse z-30" />
         <div
-          className="bg-hows-that-pokemon absolute top-0 bottom-0 left-0 right-0 bg-contain bg-no-repeat
+          className="bg-whos-that-pokemon absolute top-0 bottom-0 left-0 right-0 bg-contain bg-no-repeat
         rounded-md rounded-tl-xl rounded-tr-xl z-0"
         />
       </section>

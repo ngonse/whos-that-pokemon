@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hows-that-pokemon': 'url("/bg.png")',
-        'hows-that-pokemon-mb': 'url("/bg-mobile.png")',
+        'whos-that-pokemon': 'url("/bg.png")',
+        'whos-that-pokemon-mb': 'url("/bg-mobile.png")',
       },
       backgroundPosition: {
         'right-center': 'right center',
