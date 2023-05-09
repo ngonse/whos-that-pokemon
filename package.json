@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "axios-cache-interceptor": "^1.0.1",
     "canvas-confetti": "^1.6.0",
+    "clsx": "^1.2.1",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "next": "13.4.1",

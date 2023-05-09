@@ -32,7 +32,7 @@ export const PokemonContainer: React.FC<Props> = ({ pokemon, guess }) => {
   };
 
   return (
-    <>
+    <div className="lg:flex lg:justify-center lg:items-center lg:flex-col lg:min-w-full">
       <PokemonImage pokemon={guessPokemon} hasGuess={hasGuess} loading={loading} />
       <Options
         pokemonList={pokemonList}
@@ -43,6 +43,6 @@ export const PokemonContainer: React.FC<Props> = ({ pokemon, guess }) => {
         loading={loading}
         setLoading={setLoading}
       />
-    </>
+    </div>
   );
 };

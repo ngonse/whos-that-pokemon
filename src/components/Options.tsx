@@ -53,7 +53,7 @@ export const Options: React.FC<Props> = ({
   }, []);
 
   return (
-    <section className="relative grid grid-cols-2 grid-rows-2 gap-3 mt-3 w-full px-3 sm:w-[800px]">
+    <section className="relative grid grid-cols-2 grid-rows-2 gap-3 mt-3 w-full px-3 sm:w-[620px] sm:px-0 md:w-[740px] lg:w-[860px]">
       {pokemonList.map(({ id, name }) => (
         <button
           key={id}

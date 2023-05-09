@@ -29,9 +29,9 @@ body {
 }
 
 .button:nth-child(3) {
-  @apply rounded-bl-xl;
+  @apply sm:rounded-bl-xl;
 }
 
 .button:nth-child(4) {
-  @apply rounded-br-xl;
+  @apply sm:rounded-br-xl;
 }
