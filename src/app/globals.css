@@ -22,7 +22,7 @@ body {
 }
 
 .button {
-  @apply focus:ring-4 focus:outline-none font-bold text-xl uppercase px-5 py-7 text-center rounded-md  hover:opacity-80 tracking-wider bg-hows-that-pokemon bg-right-center flex justify-center items-center;
+  @apply focus:ring-4 focus:outline-none font-bold text-base sm:text-xl uppercase px-5 py-7 text-center rounded-md  hover:opacity-80 tracking-wider bg-hows-that-pokemon bg-right-center flex justify-center items-center;
   color: #ffcb05;
   text-shadow: 3px 0 #3a5ea9, -3px 0 #3a5ea9, 0 3px #3a5ea9, 0 -3px #3a5ea9, 2px 2px #3a5ea9, -2px -2px #3a5ea9,
     2px -2px #3a5ea9, -2px 2px #3a5ea9;

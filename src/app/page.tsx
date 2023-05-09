@@ -19,7 +19,7 @@ export default async function Home() {
   const { pokemonList, guessPokemon } = await loagPokemon();
 
   return (
-    <main className={`${pressStart.className} bg-stone-900 min-h-screen flex flex-col p-14 justify-start items-center`}>
+    <main className={`${pressStart.className} bg-stone-900 min-h-screen flex flex-col justify-start items-center`}>
       <Toaster
         position="top-center"
         toastOptions={{

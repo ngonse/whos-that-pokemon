@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hows-that-pokemon': 'url("/bg.png")',
+        'hows-that-pokemon-mb': 'url("/bg-mobile.png")',
       },
       backgroundPosition: {
         'right-center': 'right center',
