@@ -42,7 +42,7 @@ export const Options: React.FC<Props> = ({ pokemonList, guess, hasGuess, setGues
   }, []);
 
   return (
-    <section className="relative grid grid-cols-2 grid-rows-2 gap-3 mt-3 w-[800px]">
+    <section className="relative grid grid-cols-2 grid-rows-2 gap-3 mt-3 sm:w-[800px]">
       {pokemonList.map(({ id, name }) => (
         <button
           key={id}

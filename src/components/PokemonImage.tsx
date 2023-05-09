@@ -8,7 +8,7 @@ type Props = {
 
 export const PokemonImage: React.FC<Props> = ({ pokemon: { id }, hasGuess }) => {
   return (
-    <section className="relative aspect-video w-screen sm:w-[800px]">
+    <section className="relative aspect-video w-screen h-[400px] sm:w-[800px]">
       <Image
         className={`${
           hasGuess ? 'brightness-100' : 'brightness-0'
@@ -20,8 +20,8 @@ export const PokemonImage: React.FC<Props> = ({ pokemon: { id }, hasGuess }) => 
       />
 
       <div
-        className="bg-hows-that-pokemon absolute top-0 bottom-0 left-0 right-0 bg-contain bg-no-repeat
-        rounded-md rounded-tl-xl rounded-tr-xl z-0"
+        className="bg-hows-that-pokemon absolute top-0 bottom-0 left-0 right-0 bg-cover bg-no-repeat
+        sm:rounded-md sm:rounded-tl-xl sm:rounded-tr-xl z-0 w-[350px] h-[350px] "
       />
     </section>
   );
