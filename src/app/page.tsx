@@ -1,7 +1,7 @@
 import { Press_Start_2P } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 import { getPokemon } from '@app/api/pokemon/route';
-import { PokemonList } from '@components/PokemonList';
-import { PokemonImage } from '@components/PokemonImage';
+import { PokemonContainer } from '@components/PokemonContainer';
 
 const pressStart = Press_Start_2P({
   weight: '400',
@@ -20,7 +20,20 @@ export default async function Home() {
 
   return (
     <main className={`${pressStart.className} bg-stone-900 min-h-screen flex flex-col p-14 justify-start items-center`}>
-      <PokemonList pokemon={pokemonList} guess={guessPokemon} />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: '#D81111',
+            color: '#ffcb05',
+            textShadow:
+              '3px 0 #3a5ea9, -3px 0 #3a5ea9, 0 3px #3a5ea9, 0 -3px #3a5ea9, 2px 2px #3a5ea9, -2px -2px  #3a5ea9, 2px -2px #3a5ea9, -2px 2px #3a5ea9',
+          },
+          duration: 2000,
+        }}
+      />
+
+      <PokemonContainer pokemon={pokemonList} guess={guessPokemon} />
     </main>
   );
 }
