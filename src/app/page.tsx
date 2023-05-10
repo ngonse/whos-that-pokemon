@@ -1,12 +1,6 @@
-import { Press_Start_2P } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import { getPokemon } from '@app/api/pokemon/route';
 import { PokemonContainer } from '@components/PokemonContainer';
-
-const pressStart = Press_Start_2P({
-  weight: '400',
-  subsets: ['latin-ext'],
-});
 
 const loagPokemon = async () => {
   const pokemonList = await getPokemon();
@@ -19,7 +13,7 @@ export default async function Home() {
   const { pokemonList, guessPokemon } = await loagPokemon();
 
   return (
-    <main className={`${pressStart.className} bg-stone-900 min-h-screen flex flex-col justify-start items-center`}>
+    <main className='bg-stone-900 min-h-screen flex flex-col justify-start items-center'>
       <Toaster
         position="top-center"
         toastOptions={{

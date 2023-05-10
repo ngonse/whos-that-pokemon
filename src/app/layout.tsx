@@ -1,7 +1,10 @@
+import { Press_Start_2P } from 'next/font/google';
 import './globals.css';
-import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const pressStart = Press_Start_2P({
+  weight: '400',
+  subsets: ['latin-ext'],
+});
 
 export const metadata = {
   title: "Who's that Pokémon?",
@@ -11,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={pressStart.className}>{children}</body>
     </html>
   );
 }
